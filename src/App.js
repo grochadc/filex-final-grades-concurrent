@@ -1,28 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import CodeForm from "./components/CodeForm";
+import Grades from "./components/Grades";
+import useToggle from "./hooks";
+import "./App.css";
+const grades = require("./grade-json-example.json");
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+function App() {
+  let [showGrades, toggleShowGrades] = useToggle(false);
+  let [currentStudent, changeCurrentStudent] = useState({});
+  let studentExists = currentStudent !== undefined;
+  function handleCode(code) {
+    changeCurrentStudent(grades.find(item => item.code === code));
+    console.log(studentExists);
+    toggleShowGrades();
   }
+  return (
+    <div className="App">
+      <header>
+        <h1>Calificaciones FILEX</h1>
+        <h2>Teacher Gonzalo Rocha</h2>
+      </header>
+      <div className="content">
+        {!showGrades ? (
+          <CodeForm handleCode={handleCode} />
+        ) : (
+          <div>
+            <Grades gradesExist={studentExists} info={currentStudent} />
+            <button onClick={toggleShowGrades}>Atrás</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default App;
