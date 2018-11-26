@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import CodeForm from "./components/CodeForm";
 import Grades from "./components/Grades";
-import useToggle from "./hooks";
+import { useToggle } from "./hooks";
 import "./App.css";
-const grades = require("./grade-json-example.json");
+const grades = require("./grades.json");
 
 function App() {
   let [showGrades, toggleShowGrades] = useToggle(false);
@@ -11,7 +11,6 @@ function App() {
   let studentExists = currentStudent !== undefined;
   function handleCode(code) {
     changeCurrentStudent(grades.find(item => item.code === code));
-    console.log(studentExists);
     toggleShowGrades();
   }
   return (
