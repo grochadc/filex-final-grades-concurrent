@@ -1938,7 +1938,7 @@
     "finalGrade": "NP"
   },
   {
-    "code": "EXTERNO",
+    "code": "12345",
     "name": { "first": "JOSE ARMANDO", "last": ["DIAZ", "RODRIGUEZ"] },
     "major": "EXTERNO",
     "midterm": { "written": "17", "oral": "12" },
