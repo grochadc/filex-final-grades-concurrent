@@ -24,8 +24,8 @@ module.exports = function CSVtoArray(text) {
     major: a[4],
     midterm: { written: a[5], oral: a[6] },
     final: { written: a[7], oral: a[8] },
-    projects: [a[9], a[10], a[11]],
-    moodle: a[12],
+    projects: [a[9], a[10], a[11], a[12]],
+    moodle: a[13],
     reading: a[14],
     conversation: a[15],
     finalGrade: a[16]
