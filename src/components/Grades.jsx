@@ -10,12 +10,10 @@ export default function Grades(props) {
       parseFloat(props.info.moodle),
       parseFloat(props.info.reading),
       parseFloat(props.info.conversation),
-      ...props.info.projects.map(value => parseFloat(value))
+      ...props.info.projects.map(value => parseFloat(value)),
+      parseFloat(props.info.projectExtra)
     ];
-    const finalGrade =
-      props.info.projects.reduce((accum, value) => accum + value) === 9
-        ? grades.reduce((acum, value) => acum + value) + 1
-        : grades.reduce((acum, value) => acum + value);
+    const finalGrade = grades.reduce((accum, value) => accum + value);
     return (
       <div className="gradesContainer">
         <p>
