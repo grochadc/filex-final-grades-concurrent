@@ -2,6 +2,17 @@ import React from "react";
 
 export default function Grades(props) {
   if (props.gradesExist) {
+    const grades = [
+      parseInt(props.info.midterm.written),
+      parseInt(props.info.midterm.oral),
+      parseInt(props.info.final.written),
+      parseInt(props.info.final.oral),
+      parseInt(props.info.moodle),
+      parseInt(props.info.reading),
+      parseInt(props.info.conversation),
+      ...props.info.projects.map(value => parseInt(value))
+    ];
+    const finalGrade = grades.reduce((acum, value) => acum + value);
     return (
       <div className="gradesContainer">
         <p>
@@ -42,7 +53,12 @@ export default function Grades(props) {
             </tr>
             <tr>
               <th colSpan="5">Total:</th>
-              <td colSpan="5">{props.info.finalGrade}</td>
+              <td colSpan="5">
+                {props.info.projects.reduce((accum, value) => accum + value) ===
+                9
+                  ? finalGrade + 1
+                  : finalGrade}
+              </td>
             </tr>
           </tbody>
         </table>
