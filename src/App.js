@@ -15,8 +15,7 @@ function App() {
   }
   return (
     <div className="App">
-        <h1>LA PAGINA SE MOVIO A UNA NUEVA DIRECCIÓN</h1>
-        Click aquí: <a href="https://filex-grades.herokuapp.com/">filex-grades.herokuapp.com</a>
+        <h1>AVISO: Por razones de fuerza mayor, las calificaciones aún no están disponibles. Favor de revisar más tarde</h1>
     </div>
   );
 }
