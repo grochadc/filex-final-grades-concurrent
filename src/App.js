@@ -15,7 +15,8 @@ function App() {
   }
   return (
     <div className="App">
-        <h1>AVISO: Por razones de fuerza mayor, las calificaciones aún no están disponibles. Favor de revisar más tarde</h1>
+        <h1>AVISO: Las calificaciones ya estan listas. Pueden checarlas con su codigo en la siguiente direccion:</h1>
+        Calificaciones aqui: <a href="https://filex-grades.herokuapp.com/"> https://filex-grades.herokuapp.com/</a>
     </div>
   );
 }
