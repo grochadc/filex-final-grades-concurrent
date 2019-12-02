@@ -15,20 +15,8 @@ function App() {
   }
   return (
     <div className="App">
-      <header>
-        <h1>Calificaciones FILEX</h1>
-        <h2>Teacher Gonzalo Rocha</h2>
-      </header>
-      <div className="content">
-        {!showGrades ? (
-          <CodeForm handleCode={handleCode} />
-        ) : (
-          <div>
-            <Grades gradesExist={studentExists} info={currentStudent} />
-            <button onClick={toggleShowGrades}>Atrás</button>
-          </div>
-        )}
-      </div>
+        <h1>LA PAGINA SE MOVIO A UNA NUEVA DIRECCIÓN</h1>
+        Click aquí: <a href="https://filex-grades.herokuapp.com/">filex-grades.herokuapp.com</a>
     </div>
   );
 }
